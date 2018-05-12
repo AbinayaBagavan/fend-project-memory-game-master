@@ -124,10 +124,16 @@ function openCard(event)
 						alert("Dismatch");
 						openCardsArray[0].style.background="red";
 						openCardsArray[1].style.background="red";
-
+						setTimeout(function(){
+							openCardsArray[0].style.background="";
+							openCardsArray[1].style.background="";
+							openCardsArray[0].classList.remove('show','open');
+							openCardsArray[1].classList.remove('show','open');
+							openCardsArray=[];
+						},500);
 					}
 
-				});
+				},500);
 
 		}
 
