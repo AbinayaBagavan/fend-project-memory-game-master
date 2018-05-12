@@ -23,6 +23,7 @@ let time=document.querySelector("time");
 let seconds=0;
 let minutes=0;
 let hours=0;
+let t;
 let page=document.querySelector(".page-container");
 let winner=document.querySelector(".winner");
 window.addEventListener("load",function(){
@@ -53,7 +54,8 @@ function startGame()
 	tilesFlipped=0;
 	moves=0;
 	openCardsArray=[];
-
+	clearTimer();
+	timer();
 
 	for(let i=0;i<cardArray.length;i++)
 	{
@@ -178,6 +180,41 @@ function checkEnd()
 let reset=document.querySelector(".restart");
 reset.addEventListener("click",function(){restart();})
 
+//restart function
+function restart()
+{
+	window.loaction.reload(); //load the window again	
+}
+
+function timer()
+{
+	t=setTimeout(add,1000);
+}
+	function add()
+	{
+		seconds++;
+		if(seconds>=60)
+		{
+			seconds=0;
+			minutes++;
+			if(minutes>=60)
+			{
+				minutes=0;
+				hours++;
+			}
+		}
+
+time.textContent=(hours ?(hours > 9 ? hours:"0"+hours) :"00")+":"+(minutes ? (minutes > 9? minutes:"0"+minutes):"00")+":"+(seconds>9?seconds:"0"+seconds);
+		timer();
+	}
+
+function clearTimer()
+{
+	seconds=0;
+	minutes=0;
+	hours=0;
+	time.innerText="00:00:00";
+}
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
