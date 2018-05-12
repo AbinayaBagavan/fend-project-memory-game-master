@@ -1,20 +1,23 @@
 # Memory Game Project
 
 ## Table of Contents
+> Synopsis
+> Installation
+> Contributing
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+## Synopsis
 
-## Instructions
+The memory game project is web based matching game developed using HTML,CSS and Javascript.The Game has 8 pairs of cards the player should matach all of them to win the game.The user's moves made and the time taken to finish the game are tracked.
+The start rating is calculated based on the moves made.To restart the game the player should hit the restart icon in the game.
+If the game in finsihed a winner declaration message opens that contains the player's moves ,time and star rating.To play the game again the player should hit the play again button below the winner declaration. 
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Installation
+The project consists of three files
+	-index.html 
+	-app.css
+	-app.js
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
+	To start the game the user should run the index.html in their browser
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+For the original project details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
