@@ -27,11 +27,12 @@ let t;
 let page=document.querySelector(".page-container");
 let winner=document.querySelector(".winner");
 let playAgain=document.querySelector(".play-again");
-playAgain.addEventListener("click",function(){startGame();});
+playAgain.addEventListener("click",function(){restart();}); //Play again 
 window.addEventListener("load",function(){
 	startGame();
-});
-function shuffle(array) {
+}); //starting game on loading window
+function shuffle(array) //cards shuffling function 
+{
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
@@ -45,10 +46,10 @@ function shuffle(array) {
     return array;
 }
 
-function startGame()
+function startGame()  //game start and play again
 {
 	alert("LETS MATCH!!!!!");
-	cardArray=shuffle(cardArray);
+	cardArray=shuffle(cardArray); 
 	page.classList.remove("hidden");
 	winner.classList.add("hidden");
 	let tempArray=[];
