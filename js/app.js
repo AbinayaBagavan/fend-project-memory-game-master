@@ -23,7 +23,8 @@ let time=document.querySelector("time");
 let seconds=0;
 let minutes=0;
 let hours=0;
-
+let page=document.querySelector(".page-container");
+let winner=document.querySelector(".winner");
 window.addEventListener("load",function(){
 	startGame();
 });
@@ -115,6 +116,7 @@ function openCard(event)
 					{
 						//alert("Matches");
 						tilesFlipped+=2;
+						checkEnd();
 						openCardsArray[0].classList.toggle("match");
 						openCardsArray[1].classList.toggle("match");
 						openCardsArray=[];
@@ -151,6 +153,30 @@ function checkMove()
 		starCount[1].style.visibility="collapse";
 	}
 }
+
+function checkEnd()
+{
+	if(tilesFlipped===16)
+	{
+		//alert("Game Over");
+		let star=document.querySelector(".stars");
+		page.classList.toggle("hidden");
+		winner.classList.toggle("hidden");
+		document.querySelector(".final-time").innerText="Time: "+time.innerText;
+		document.querySelector(".final-moves").innerText="Moves: "+moves;
+		let fstar=document.querySelector(".fstars")
+		fstar.innerHTML=star.innerHTML;
+
+		tilesFlipped=0;
+		moves=0;
+		moveDisplay.innerText=moves;
+
+	}
+}
+
+//reset button 
+let reset=document.querySelector(".restart");
+reset.addEventListener("click",function(){restart();})
 
 /*
  * set up the event listener for a card. If a card is clicked:
