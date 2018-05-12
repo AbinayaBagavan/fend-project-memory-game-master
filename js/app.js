@@ -26,6 +26,8 @@ let hours=0;
 let t;
 let page=document.querySelector(".page-container");
 let winner=document.querySelector(".winner");
+let playAgain=document.querySelector(".play-again");
+playAgain.addEventListener("click",function(){startGame();});
 window.addEventListener("load",function(){
 	startGame();
 });
@@ -45,7 +47,10 @@ function shuffle(array) {
 
 function startGame()
 {
+	alert("LETS MATCH!!!!!");
 	cardArray=shuffle(cardArray);
+	page.classList.remove("hidden");
+	winner.classList.add("hidden");
 	let tempArray=[];
 	for(i=0;i<starCount.length;i++)
 	{
@@ -161,6 +166,7 @@ function checkEnd()
 	if(tilesFlipped===16)
 	{
 		//alert("Game Over");
+		setTimeout(function(){
 		let star=document.querySelector(".stars");
 		page.classList.toggle("hidden");
 		winner.classList.toggle("hidden");
@@ -173,17 +179,19 @@ function checkEnd()
 		moves=0;
 		moveDisplay.innerText=moves;
 
+		},1000);
+		
 	}
 }
 
 //reset button 
 let reset=document.querySelector(".restart");
-reset.addEventListener("click",function(){restart();})
+reset.addEventListener("click",function(){restart();});
 
 //restart function
 function restart()
 {
-	window.loaction.reload(); //load the window again	
+	window.location.reload(); //load the window again	
 }
 
 function timer()
