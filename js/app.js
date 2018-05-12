@@ -107,13 +107,13 @@ function openCard(event)
 			event.target.classList.toggle("show");
 			moves+=1;
 			moveDisplay.innerHTML=moves;
-			//checkMove();
+			checkMove();
 			setTimeout(function()
 				{
 					openCardsArray.push(event.target);
 					if(openCardsArray[0].innerHTML===openCardsArray[1].innerHTML)
 					{
-						alert("Matches");
+						//alert("Matches");
 						tilesFlipped+=2;
 						openCardsArray[0].classList.toggle("match");
 						openCardsArray[1].classList.toggle("match");
@@ -121,7 +121,7 @@ function openCard(event)
 					}
 					else
 					{
-						alert("Dismatch");
+						//alert("Dismatch");
 						openCardsArray[0].style.background="red";
 						openCardsArray[1].style.background="red";
 						setTimeout(function(){
@@ -137,6 +137,18 @@ function openCard(event)
 
 		}
 
+	}
+}
+
+function checkMove()
+{
+	if(moves>16&&moves<=25)
+	{
+		starCount[2].style.visibility="collapse";
+	}
+	else if(moves>26)
+	{
+		starCount[1].style.visibility="collapse";
 	}
 }
 
