@@ -1,9 +1,9 @@
 # Memory Game Project
 
 ## Table of Contents
-> Synopsis
-> Installation
-> Contributing
+- Synopsis
+- Installation
+- Contributing
 
 ## Synopsis
 
@@ -13,9 +13,9 @@ If the game in finsihed a winner declaration message opens that contains the pla
 
 ## Installation
 The project consists of three files
-	-index.html 
-	-app.css
-	-app.js
+	- index.html 
+	- app.css
+	- app.js
 
 	To start the game the user should run the index.html in their browser
 ## Contributing
